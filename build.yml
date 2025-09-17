@@ -13,11 +13,11 @@ jobs:
 
       - name: Build 32-bit DLL
         run: |
-          cl /LD /EHsc /FeDarkTestWrapper.dll Dummy.cpp
+          cl /LD /EHsc /Dummy.dll Dummy.cpp
           dir
 
       - name: Upload DLL
         uses: actions/upload-artifact@v4
         with:
-          name: DarkTestWrapper
-          path: DarkTestWrapper.dll
+          name: Dummy
+          path: Dummy.dll
