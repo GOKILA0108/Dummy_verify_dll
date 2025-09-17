@@ -14,7 +14,10 @@ jobs:
       - name: Build 32-bit DLL
         run: |
           cl /LD /EHsc /FeDummy.dll /machine:X86 Dummy.cpp
+          echo "=== DIR Output ==="
           dir
+          echo "=== Dumpbin Architecture Check ==="
+          dumpbin /headers Dummy.dll | findstr machine
 
       - name: Upload DLL
         uses: actions/upload-artifact@v4
