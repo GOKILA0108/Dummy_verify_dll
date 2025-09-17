@@ -13,7 +13,7 @@ jobs:
 
       - name: Build 32-bit DLL
         run: |
-          cl /LD /EHsc /Dummy.dll Duumy.cpp
+          cl /LD /EHsc /Dummy.dll Dummy.cpp
           dir
 
       - name: Upload DLL
