@@ -6,18 +6,18 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4   # <-- also updated checkout
+      - uses: actions/checkout@v3
 
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build 32-bit DLL
         run: |
-          cl /LD /EHsc /FeDarkTestWrapper.dll Dummy.cpp
+          cl /LD /EHsc /Dummy.dll Dummy.cpp
           dir
 
       - name: Upload DLL
-        uses: actions/upload-artifact@v4   # <-- updated to v4
+        uses: actions/upload-artifact@v4
         with:
           name: Dummy
-          path: DarkTestWrapper.dll        # <-- must match the file you built
+          path: Dummy.dll
