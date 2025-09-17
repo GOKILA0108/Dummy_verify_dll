@@ -11,9 +11,9 @@ jobs:
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
 
-- name: Build 32-bit DLL
-  run: |
-    cl /LD /EHsc /FeDummy.dll /machine:X86 Dummy.cpp
+      - name: Build 32-bit DLL
+        run: |
+          cl /LD /EHsc /FeDummy.dll /machine:X86 Dummy.cpp
           dir
 
       - name: Upload DLL
